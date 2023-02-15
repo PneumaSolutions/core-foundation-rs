@@ -26,6 +26,9 @@ declare_TCFType!(CFRunLoop, CFRunLoopRef);
 impl_TCFType!(CFRunLoop, CFRunLoopRef, CFRunLoopGetTypeID);
 impl_CFTypeDescription!(CFRunLoop);
 
+unsafe impl Send for CFRunLoop {}
+unsafe impl Sync for CFRunLoop {}
+
 #[derive(Copy, Clone, Debug, PartialEq)]
 pub enum CFRunLoopRunResult {
     Finished = 1,
